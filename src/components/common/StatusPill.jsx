@@ -17,10 +17,10 @@ function StatusPill({ label, status }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1 px-2 py-[3px] rounded-full text-[11px] ${map[status]}`}
+      className={`inline-flex items-center gap-1 px-2 py-0.75 rounded-full text-[11px] ${map[status]}`}
     >
       <span
-        className={`w-[5px] h-[5px] rounded-full ${dotMap[status]}`}
+        className={`w-1.25 h-1.25 rounded-full ${dotMap[status]}`}
       ></span>
       {label}
     </span>

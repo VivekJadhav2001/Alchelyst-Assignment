@@ -1,5 +1,8 @@
 import React from "react";
 import Icon from "./Icon";
+import { exportToExcel } from "../../utils/exportToExcel";
+import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 function Panel({
   title,
@@ -9,6 +12,8 @@ function Panel({
   children,
   actions,
   className = "",
+  dataType,
+  data,
 }) {
   const iconColorMap = {
     blue: "bg-[#EEF3FF] text-[#2563EB]",
@@ -18,14 +23,61 @@ function Panel({
     gray: "bg-[#F3F4F6] text-[#5A6070]",
   };
 
+  const location = useLocation();
+
+  // console.log(location,"LOCATION", location.pathname !=="/nav-workflows")
+
+  function exportFile() {
+    try {
+      if (dataType !== "navWorkflows") {
+        toast.error("Export not supported for this panel");
+        return;
+      }
+
+      const formatted = data.rows.map((item) => ({
+        id: item.id,
+        fundName: item.fund?.name,
+        fundSub: item.fund?.sub,
+        workflow: item.workflow,
+        valueDate: item.valueDate,
+        progress: item.progress,
+        status: item.steps?.map((s) => s.label).join(", "),
+      }));
+
+      exportToExcel(formatted, dataType);
+
+      toast.success("Successfully Exported As Excel", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } catch (error) {
+      toast.error("Unable To Export", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  }
+
   return (
     <div
-      className={`bg-white border border-[#E2E5EB] rounded-[16px] overflow-hidden shadow-sm flex flex-col ${className}`}
+      className={`bg-white border border-[#E2E5EB] rounded-2xl overflow-hidden shadow-sm flex flex-col ${className}`}
     >
-      <div className="px-[18px] py-[13px] border-b border-[#E2E5EB] flex items-center justify-between">
-        <div className="flex items-center gap-[9px] text-[13px] font-semibold text-[#0D1117]">
+      <div className="px-4.5 py-3.25 border-b border-[#E2E5EB] flex items-center justify-between">
+        <div className="flex items-center gap-2.25 text-[13px] font-semibold text-[#0D1117]">
           <div
-            className={`w-[28px] h-[28px] rounded-[6px] flex items-center justify-center ${iconColorMap[iconColor]}`}
+            className={`w-7 h-7 rounded-md flex items-center justify-center ${iconColorMap[iconColor]}`}
           >
             <Icon name={icon} />
           </div>
@@ -33,19 +85,32 @@ function Panel({
           {title}
 
           {count !== undefined && (
-            <span className="bg-[#F3F4F6] text-[#5A6070] text-[11px] font-semibold px-[7px] py-[2px] rounded-full font-mono">
+            <span className="bg-[#F3F4F6] text-[#5A6070] text-[11px] font-semibold px-1.75 py-0.5 rounded-full font-mono">
               {count}
             </span>
           )}
 
-          <div className="flex gap-2">
-            <button className="text-[12px] px-[11px] py-[5px] rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] cursor-pointer font-['DM Sans',sans-serif] transition-all duration-150">
-              Export
-            </button>
-            <button className="text-[12px] px-[11px] py-[5px] rounded-[var(--radius-sm)] border border-[var(--blue)] bg-[var(--blue)] text-black cursor-pointer font-['DM Sans',sans-serif] transition-all duration-150">
-              + New Workflow
-            </button>
-          </div>
+          {title === "Portfolio Dashboard" && location.pathname === "/" && (
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className="text-[12px] px-2.75 py-1.25 rounded-sm border border-(--border) bg-(--surface) text-(--text-secondary) cursor-pointer font-['DM Sans',sans-serif] transition-all duration-150
+                hover:bg-blue-600
+                hover:text-white
+                "
+                onClick={exportFile}
+              >
+                Export
+              </button>
+              <button
+                className="text-[12px] px-2.75 py-1.25 rounded-sm border border-(--border) bg-(--surface) text-(--text-secondary) cursor-pointer font-['DM Sans',sans-serif] transition-all duration-150
+                hover:bg-blue-600
+                hover:text-white"
+              >
+                + New Workflow
+              </button>
+            </div>
+          )}
         </div>
 
         {actions && <div className="flex gap-1.5">{actions}</div>}

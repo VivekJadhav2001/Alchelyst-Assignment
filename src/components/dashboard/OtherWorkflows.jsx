@@ -22,14 +22,13 @@ const rows = data.rows.slice(startIndex, endIndex);
 const start = startIndex + 1;
 const end = endIndex > data.rows.length ? data.rows.length : endIndex;
 
-  console.log(data,"otherWorkflow")
   return (
     <div>
       <Panel
         title={data.title}
         icon={data.icon}
         iconColor={data.iconColor}
-        count={data.count}
+        count={data.rows.length}
       >
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
@@ -59,7 +58,7 @@ const end = endIndex > data.rows.length ? data.rows.length : endIndex;
                     <div className="font-semibold text-[13px] text-[#0D1117]">
                       {row.fund.name}
                     </div>
-                    <div className="text-[11px] text-[#9AA0AF] mt-[1px] max-w-[140px] truncate">
+                    <div className="text-[11px] text-[#9AA0AF] mt-px max-w-35 truncate">
                       {row.fund.sub}
                     </div>
                   </td>

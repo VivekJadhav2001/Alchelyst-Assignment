@@ -28,7 +28,7 @@ function StatusTag({ status }) {
 
   return (
     <span
-      className={`inline-flex items-center text-[11px] font-semibold px-[9px] py-[3px] rounded-full tracking-[0.02em] ${cls}`}
+      className={`inline-flex items-center text-[11px] font-semibold px-2.25 py-0.75 rounded-full tracking-[0.02em] ${cls}`}
     >
       {label}
     </span>

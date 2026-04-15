@@ -5,6 +5,7 @@ import CapitalEvents from "../components/dashboard/CapitalEvents";
 import Reports from "../components/dashboard/Reports";
 
 import DATA from "../data/dummy.json"
+import Payments from "../components/dashboard/Payments";
 
 function Dashboard({ activeTab,openModal }) {
   // if (activeTab !== "nav-workflows") return null;
@@ -19,11 +20,13 @@ function Dashboard({ activeTab,openModal }) {
   {/* Middle Grid */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <OtherWorkflows data={DATA.otherWorkflows} />
-    <CapitalEvents />
+    <CapitalEvents data={DATA.capitalEvents} />
   </div>
 
   {/* Bottom */}
-  <Reports />
+  <Reports data={DATA.reports} />
+
+  <Payments data={DATA.payments}/>
   
 </div>
   );

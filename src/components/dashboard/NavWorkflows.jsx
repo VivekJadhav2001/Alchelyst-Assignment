@@ -27,8 +27,10 @@ function NavWorkflows({ data, onRowClick }) {
       title={data.title}
       icon={data.icon}
       iconColor={data.iconColor}
-      count={data.count}
+      count={data.rows.length}
       className="col-span-full"
+      dataType={"navWorkflows"}
+      data={data}
     >
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
@@ -60,11 +62,11 @@ function NavWorkflows({ data, onRowClick }) {
                 onClick={() => onRowClick(row.modal)}
                 className="border-b border-[#E2E5EB] hover:bg-[#F7F8FA] cursor-pointer"
               >
-                <td className="px-4 py-3 min-w-[160px]">
+                <td className="px-4 py-3 min-w-40">
                   <div className="font-semibold text-[13px] group-hover:text-[#2563EB]">
                     {row.fund.name}
                   </div>
-                  <div className="text-[11px] text-[#9AA0AF] mt-[1px] max-w-[140px] truncate">
+                  <div className="text-[11px] text-[#9AA0AF] mt-px max-w-35 truncate">
                     {row.fund.sub}
                   </div>
                 </td>

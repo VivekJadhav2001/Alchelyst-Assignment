@@ -3,61 +3,360 @@
     "user": {
       "name": "Vivek Jadhav",
       "initials": "VJ",
-      "role": "Fund Administrator"
+      "role": "Portfolio Analyst",
+      "email": "vivek.jadhav200127@gmail.com",
+      "phone": "+91-939894XXXX",
+      "location": "Hyderabad, India",
+      "avatar": "https://images.pexels.com/photos/35501928/pexels-photo-35501928/free-photo-of-stock-market-analysis-on-tablet-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "bio": "Portfolio Analyst with 2+ years experience"
     },
-    "dateRange": { "from": "01 Jan 2026", "to": "14 Apr 2026" },
-    "totalWorkflows": 26
+    "dateRange": { "from": "01 Feb 2026", "to": "10 Apr 2026" },
+    "totalWorkflows": 31
   },
   "navTabs": [
-    { "id": "nav-workflows", "label": "NAV Workflows" },
-    { "id": "other-workflows", "label": "Other Workflows" },
-    { "id": "capital-events", "label": "Capital Events" },
-    { "id": "reports", "label": "Reports" },
-    { "id": "payments", "label": "Payments" }
+    { "id": "nav-workflows", "label": "Portfolio Workflows", "active": true },
+    { "id": "other-workflows", "label": "Operational Tasks" },
+    { "id": "capital-events", "label": "Fund Movements" },
+    { "id": "reports", "label": "Analytics Reports" },
+    { "id": "payments", "label": "Transactions" }
   ],
   "filterChips": [
-    { "id": "all", "label": "All items", "active": true },
-    { "id": "capital", "label": "Capital Events" },
-    { "id": "workflows", "label": "Workflows" },
-    { "id": "reports", "label": "Reports" },
-    { "id": "payments", "label": "Payments" }
+    { "id": "all", "label": "Everything", "active": true },
+    { "id": "capital", "label": "Fund Events" },
+    { "id": "workflows", "label": "Processes" },
+    { "id": "reports", "label": "Insights" },
+    { "id": "payments", "label": "Transfers" }
   ],
   "navWorkflows": {
-    "title": "NAV Overview",
+    "title": "Portfolio Dashboard",
     "icon": "chart",
-    "iconColor": "blue",
-    "count": 26,
+    "iconColor": "green",
+    "count": 31,
+    "totalRows": 31,
+    "columns": ["Fund", "Workflow", "Value date", "Progress", "Step status"],
     "rows": [
       {
-        "id": "nw1",
-        "fund": { "name": "EBBR", "sub": "EBBR Holdings LLC" },
-        "workflow": "BBR Quarterly NAV",
-        "valueDate": "30 Sep 2025",
-        "progress": 72,
-        "progressColor": "amber",
+        "id": "nw101",
+        "fund": {
+          "name": "Reliance Capital",
+          "sub": "Reliance Industries Ltd"
+        },
+        "workflow": "Quarterly NAV Review",
+        "valueDate": "31 Dec 2025",
+        "progress": 81,
+        "progressColor": "green",
         "steps": [
-          { "label": "Pre-period checks", "status": "done" },
-          { "label": "Transactions", "status": "done" },
-          { "label": "Capital & P&L", "status": "done" },
-          { "label": "Client approval", "status": "warn" }
+          { "label": "Validation", "status": "done" }
         ],
         "modal": {
-          "title": "EBBR – BBR Quarterly NAV",
-          "subtitle": "EBBR Holdings LLC  ·  Value date: 30 Sep 2025",
+          "title": "Reliance Capital – Quarterly NAV Review",
+          "subtitle": "Reliance Industries Ltd  ·  Value date: 31 Dec 2025",
           "kpis": [
             {
               "label": "Subscriptions (YTD)",
-              "value": "$33.0M",
-              "sub": "Net: $32.34M"
+              "value": "$42.0M",
+              "sub": "Net: $41.2M"
             },
             {
               "label": "Redemptions (YTD)",
-              "value": "$5.0M",
-              "sub": "Net: $5.05M"
+              "value": "$6.5M",
+              "sub": "Net: $6.6M"
             },
             {
               "label": "Workflow progress",
-              "value": "72%",
+              "value": "81%",
+              "sub": "9 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "1",
+              "sub": "Final validation pending",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Capital and P&L", "status": "done" },
+            { "name": "Reports review", "status": "done" },
+            { "name": "Post NAV", "status": "done" },
+            { "name": "Validation", "status": "done" },
+            { "name": "Client approval – NAV", "status": "done" },
+            { "name": "Client approval – PCAP & FS", "status": "warn" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$20.0M",
+              "subscriptions": "+$12.0M",
+              "redemptions": "-$3.0M",
+              "pnl": "+$1.80M",
+              "fees": "-$0.42M",
+              "closing": "$30.38M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$15.0M",
+              "subscriptions": "+$10.0M",
+              "redemptions": "-$2.0M",
+              "pnl": "+$1.40M",
+              "fees": "-$0.33M",
+              "closing": "$24.07M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor C",
+              "opening": "$25.0M",
+              "subscriptions": "+$20.0M",
+              "redemptions": "-$1.5M",
+              "pnl": "+$2.20M",
+              "fees": "-$0.52M",
+              "closing": "$45.18M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw102",
+        "fund": { "name": "Tata Equity Fund", "sub": "TCS" },
+        "workflow": "Daily NAV Process",
+        "valueDate": "05 Jan 2026",
+        "progress": 52,
+        "progressColor": "blue",
+        "steps": [
+          { "label": "Trades", "status": "warn" }
+        ],
+        "modal": {
+          "title": "Tata Equity Fund – Daily NAV Process",
+          "subtitle": "TCS  ·  Value date: 05 Jan 2026",
+          "kpis": [
+            {
+              "label": "AUM",
+              "value": "$95M",
+              "sub": "As of Jan 2026"
+            },
+            {
+              "label": "Daily Trades",
+              "value": "34",
+              "sub": "8 pending"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "52%",
+              "sub": "6 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "3",
+              "sub": "Trade review needed",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Security master", "status": "done" },
+            { "name": "Pricing & FX", "status": "done" },
+            { "name": "Trade capture", "status": "warn" },
+            { "name": "Capital and P&L", "status": "gray" },
+            { "name": "Client approval – NAV", "status": "gray" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$45.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$2.10M",
+              "fees": "-$0.48M",
+              "closing": "$46.62M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$38.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$1.78M",
+              "fees": "-$0.41M",
+              "closing": "$39.37M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw103",
+        "fund": { "name": "Adani Infra Fund", "sub": "Adani Group" },
+        "workflow": "Infrastructure NAV",
+        "valueDate": "28 Feb 2026",
+        "progress": 67,
+        "progressColor": "amber",
+        "steps": [
+          { "label": "Asset Review", "status": "done" }
+        ],
+        "modal": {
+          "title": "Adani Infra Fund – Infrastructure NAV",
+          "subtitle": "Adani Group  ·  Value date: 28 Feb 2026",
+          "kpis": [
+            {
+              "label": "Subscriptions (YTD)",
+              "value": "$60.0M",
+              "sub": "Net: $58.8M"
+            },
+            {
+              "label": "Redemptions (YTD)",
+              "value": "$0.0M",
+              "sub": "Net: $0.0M"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "67%",
+              "sub": "7 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "2",
+              "sub": "Asset review pending",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Asset valuation", "status": "done" },
+            { "name": "Capital and P&L", "status": "done" },
+            { "name": "Reports review", "status": "done" },
+            { "name": "Asset review", "status": "done" },
+            { "name": "Post NAV", "status": "warn" },
+            { "name": "Client approval – NAV", "status": "gray" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$30.0M",
+              "subscriptions": "+$30.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$2.40M",
+              "fees": "-$0.55M",
+              "closing": "$61.85M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$0.0M",
+              "subscriptions": "+$30.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$2.40M",
+              "fees": "-$0.55M",
+              "closing": "$31.85M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw104",
+        "fund": { "name": "Infosys Alpha", "sub": "IT Growth" },
+        "workflow": "Monthly NAV",
+        "valueDate": "10 Feb 2026",
+        "progress": 44,
+        "progressColor": "blue",
+        "steps": [
+          { "label": "Pricing", "status": "warn" }
+        ],
+        "modal": {
+          "title": "Infosys Alpha – Monthly NAV",
+          "subtitle": "IT Growth  ·  Value date: 10 Feb 2026",
+          "kpis": [
+            {
+              "label": "Subscriptions (YTD)",
+              "value": "$22.0M",
+              "sub": "Net: $21.5M"
+            },
+            {
+              "label": "Redemptions (YTD)",
+              "value": "$3.0M",
+              "sub": "Net: $3.1M"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "44%",
+              "sub": "5 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "3",
+              "sub": "Pricing review needed",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Security master", "status": "done" },
+            { "name": "Pricing & FX", "status": "warn" },
+            { "name": "Income processing", "status": "gray" },
+            { "name": "Capital and P&L", "status": "gray" },
+            { "name": "Client approval – NAV", "status": "gray" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$10.0M",
+              "subscriptions": "+$12.0M",
+              "redemptions": "-$2.0M",
+              "pnl": "+$0.90M",
+              "fees": "-$0.22M",
+              "closing": "$20.68M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$8.0M",
+              "subscriptions": "+$10.0M",
+              "redemptions": "-$1.0M",
+              "pnl": "+$0.72M",
+              "fees": "-$0.17M",
+              "closing": "$17.55M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw105",
+        "fund": { "name": "HDFC Balanced", "sub": "Hybrid Fund" },
+        "workflow": "Quarterly NAV",
+        "valueDate": "15 Feb 2026",
+        "progress": 76,
+        "progressColor": "green",
+        "steps": [
+          { "label": "P&L", "status": "done" }
+        ],
+        "modal": {
+          "title": "HDFC Balanced – Quarterly NAV",
+          "subtitle": "Hybrid Fund  ·  Value date: 15 Feb 2026",
+          "kpis": [
+            {
+              "label": "Subscriptions (YTD)",
+              "value": "$28.0M",
+              "sub": "Net: $27.4M"
+            },
+            {
+              "label": "Redemptions (YTD)",
+              "value": "$4.0M",
+              "sub": "Net: $4.1M"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "76%",
               "sub": "8 of 11 steps done"
             },
             {
@@ -74,530 +373,401 @@
             { "name": "Capital and P&L", "status": "done" },
             { "name": "Reports review", "status": "done" },
             { "name": "Post NAV", "status": "done" },
-            { "name": "Client approval – NAV", "status": "warn" },
+            { "name": "Reconciliation", "status": "done" },
+            { "name": "Client approval – NAV", "status": "done" },
             { "name": "Client approval – PCAP & FS", "status": "warn" }
           ],
           "investors": [
             {
               "name": "Investor A",
-              "opening": "$0.0M",
-              "subscriptions": "+$10.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$0.85M",
-              "fees": "-$0.20M",
-              "closing": "$10.65M",
+              "opening": "$15.0M",
+              "subscriptions": "+$8.0M",
+              "redemptions": "-$2.0M",
+              "pnl": "+$1.10M",
+              "fees": "-$0.26M",
+              "closing": "$21.84M",
               "status": "Active"
             },
             {
               "name": "Investor B",
-              "opening": "$0.0M",
-              "subscriptions": "+$15.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$1.29M",
-              "fees": "-$0.30M",
-              "closing": "$15.99M",
+              "opening": "$12.0M",
+              "subscriptions": "+$10.0M",
+              "redemptions": "-$2.0M",
+              "pnl": "+$0.90M",
+              "fees": "-$0.21M",
+              "closing": "$20.69M",
               "status": "Active"
             },
             {
               "name": "Investor C",
-              "opening": "$20.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "-$5.0M",
-              "pnl": "+$1.72M",
-              "fees": "-$0.41M",
-              "closing": "$16.31M",
-              "status": "Active"
-            },
-            {
-              "name": "Investor D",
-              "opening": "$0.0M",
-              "subscriptions": "+$8.0M",
+              "opening": "$10.0M",
+              "subscriptions": "+$10.0M",
               "redemptions": "$0.0M",
-              "pnl": "+$0.22M",
-              "fees": "-$0.16M",
-              "closing": "$8.06M",
-              "status": "Active"
-            },
-            {
-              "name": "Investor E",
-              "opening": "$30.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$2.58M",
-              "fees": "-$0.61M",
-              "closing": "$31.97M",
+              "pnl": "+$0.80M",
+              "fees": "-$0.19M",
+              "closing": "$20.61M",
               "status": "Active"
             }
           ]
         }
       },
       {
-        "id": "nw2",
-        "fund": { "name": "Steerhead NL", "sub": "Large Cap Direct Lending" },
-        "workflow": "Daily Deliverables",
-        "valueDate": "30 Sep 2025",
-        "progress": 45,
+        "id": "nw106",
+        "fund": { "name": "ICICI Growth", "sub": "Equity Fund" },
+        "workflow": "Daily NAV",
+        "valueDate": "20 Feb 2026",
+        "progress": 33,
         "progressColor": "blue",
         "steps": [
-          { "label": "Trade processing", "status": "warn" },
-          { "label": "Pricing", "status": "warn" },
-          { "label": "Reconciliation", "status": "warn" }
+          { "label": "Trades", "status": "warn" }
         ],
         "modal": {
-          "title": "Steerhead NL – Daily Deliverables",
-          "subtitle": "Steerhead Invest NL – Large Cap Direct Lending  ·  Value date: 30 Sep 2025",
+          "title": "ICICI Growth – Daily NAV",
+          "subtitle": "Equity Fund  ·  Value date: 20 Feb 2026",
           "kpis": [
-            { "label": "AUM", "value": "$87M", "sub": "Direct lending" },
-            { "label": "Daily Trades", "value": "12", "sub": "3 pending" },
+            {
+              "label": "AUM",
+              "value": "$74M",
+              "sub": "As of Feb 2026"
+            },
+            {
+              "label": "Daily Trades",
+              "value": "28",
+              "sub": "11 pending"
+            },
             {
               "label": "Workflow progress",
-              "value": "45%",
-              "sub": "5 of 11 steps done"
+              "value": "33%",
+              "sub": "4 of 11 steps done"
             },
             {
               "label": "Pending actions",
-              "value": "3",
-              "sub": "Pricing review needed",
+              "value": "4",
+              "sub": "Trade capture needed",
               "warn": true
             }
           ],
           "workflowSteps": [
             { "name": "Pre period end checks", "status": "done" },
             { "name": "Transactions processing", "status": "done" },
-            { "name": "Trade processing", "status": "warn" },
-            { "name": "Pricing & FX", "status": "warn" },
-            { "name": "Reconciliation", "status": "warn" },
+            { "name": "Security master", "status": "done" },
+            { "name": "Trade capture", "status": "warn" },
+            { "name": "Pricing & FX", "status": "gray" },
+            { "name": "Payable / Receivable", "status": "gray" },
             { "name": "Capital and P&L", "status": "gray" },
-            { "name": "Post NAV", "status": "gray" },
             { "name": "Client approval – NAV", "status": "gray" }
           ],
           "investors": [
             {
               "name": "Investor A",
-              "opening": "$40.0M",
+              "opening": "$35.0M",
               "subscriptions": "$0.0M",
               "redemptions": "$0.0M",
-              "pnl": "+$1.20M",
-              "fees": "-$0.28M",
-              "closing": "$40.92M",
+              "pnl": "+$1.40M",
+              "fees": "-$0.33M",
+              "closing": "$36.07M",
               "status": "Active"
             },
             {
               "name": "Investor B",
-              "opening": "$30.0M",
+              "opening": "$28.0M",
               "subscriptions": "$0.0M",
               "redemptions": "$0.0M",
-              "pnl": "+$0.90M",
-              "fees": "-$0.21M",
-              "closing": "$30.69M",
+              "pnl": "+$1.12M",
+              "fees": "-$0.26M",
+              "closing": "$28.86M",
               "status": "Active"
             }
           ]
         }
       },
       {
-        "id": "nw3",
-        "fund": { "name": "Steerhead NL", "sub": "Large Cap Direct Lending" },
-        "workflow": "FA Daily Workflow",
-        "valueDate": "30 Sep 2025",
-        "progress": 20,
-        "progressColor": "blue",
-        "steps": [
-          { "label": "Capital activity", "status": "gray" },
-          { "label": "Trade capture", "status": "gray" },
-          { "label": "Corp. actions", "status": "gray" },
-          { "label": "Non-trading", "status": "gray" }
-        ],
-        "modal": {
-          "title": "Steerhead NL – FA Daily Workflow",
-          "subtitle": "Steerhead Invest NL – Large Cap Direct Lending  ·  Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$87M", "sub": "Direct lending" },
-            { "label": "Daily Trades", "value": "8", "sub": "All queued" },
-            {
-              "label": "Workflow progress",
-              "value": "20%",
-              "sub": "2 of 11 steps done"
-            },
-            {
-              "label": "Pending actions",
-              "value": "5",
-              "sub": "Multiple steps blocked",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Pre period end checks", "status": "done" },
-            { "name": "Capital activity", "status": "gray" },
-            { "name": "Trade capture", "status": "gray" },
-            { "name": "Corp. actions", "status": "gray" },
-            { "name": "Non-trading", "status": "gray" },
-            { "name": "Pricing & FX", "status": "gray" },
-            { "name": "Reconciliation", "status": "gray" },
-            { "name": "Client approval", "status": "gray" }
-          ],
-          "investors": [
-            {
-              "name": "Investor A",
-              "opening": "$40.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$0.40M",
-              "fees": "-$0.10M",
-              "closing": "$40.30M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw4",
-        "fund": { "name": "Steerhead NL", "sub": "Large Cap Direct Lending" },
-        "workflow": "DA Daily Workflow",
-        "valueDate": "30 Sep 2025",
-        "progress": 88,
-        "progressColor": "green",
-        "steps": [
-          { "label": "Trade capture", "status": "done" },
-          { "label": "Security master", "status": "done" },
-          { "label": "Pricing & FX", "status": "done" },
-          { "label": "Income", "status": "done" },
-          { "label": "DA Sign-off", "status": "warn" }
-        ],
-        "modal": {
-          "title": "Steerhead NL – DA Daily Workflow",
-          "subtitle": "Steerhead Invest NL – Large Cap Direct Lending  ·  Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$87M", "sub": "Direct lending" },
-            { "label": "Daily Trades", "value": "15", "sub": "All processed" },
-            {
-              "label": "Workflow progress",
-              "value": "88%",
-              "sub": "9 of 11 steps done"
-            },
-            {
-              "label": "Pending actions",
-              "value": "1",
-              "sub": "DA sign-off needed",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Pre period end checks", "status": "done" },
-            { "name": "Transactions processing", "status": "done" },
-            { "name": "Trade capture", "status": "done" },
-            { "name": "Security master", "status": "done" },
-            { "name": "Pricing & FX", "status": "done" },
-            { "name": "Income processing", "status": "done" },
-            { "name": "Reconciliation", "status": "done" },
-            { "name": "DA Sign-off", "status": "warn" }
-          ],
-          "investors": [
-            {
-              "name": "Investor A",
-              "opening": "$40.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$1.50M",
-              "fees": "-$0.32M",
-              "closing": "$41.18M",
-              "status": "Active"
-            },
-            {
-              "name": "Investor B",
-              "opening": "$30.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$1.10M",
-              "fees": "-$0.24M",
-              "closing": "$30.86M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw5",
-        "fund": { "name": "Steerhead NL", "sub": "Large Cap Direct Lending" },
-        "workflow": "DA Daily Workflow",
-        "valueDate": "26 Sep 2025",
-        "progress": 62,
+        "id": "nw107",
+        "fund": { "name": "Wipro Tech", "sub": "Tech Fund" },
+        "workflow": "Weekly NAV",
+        "valueDate": "25 Feb 2026",
+        "progress": 59,
         "progressColor": "amber",
         "steps": [
-          { "label": "Trade capture", "status": "done" },
-          { "label": "Security master", "status": "done" },
-          { "label": "Pricing & FX", "status": "done" },
-          { "label": "Income", "status": "warn" }
+          { "label": "Review", "status": "warn" }
         ],
         "modal": {
-          "title": "Steerhead NL – DA Daily Workflow",
-          "subtitle": "Steerhead Invest NL – Large Cap Direct Lending  ·  Value date: 26 Sep 2025",
+          "title": "Wipro Tech – Weekly NAV",
+          "subtitle": "Tech Fund  ·  Value date: 25 Feb 2026",
           "kpis": [
-            { "label": "AUM", "value": "$87M", "sub": "Direct lending" },
-            { "label": "Daily Trades", "value": "11", "sub": "2 pending" },
             {
-              "label": "Workflow progress",
-              "value": "62%",
-              "sub": "7 of 11 steps done"
+              "label": "AUM",
+              "value": "$55M",
+              "sub": "As of Feb 2026"
             },
             {
-              "label": "Pending actions",
-              "value": "1",
-              "sub": "Income processing",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Pre period end checks", "status": "done" },
-            { "name": "Transactions processing", "status": "done" },
-            { "name": "Trade capture", "status": "done" },
-            { "name": "Security master", "status": "done" },
-            { "name": "Pricing & FX", "status": "done" },
-            { "name": "Income processing", "status": "warn" },
-            { "name": "Reconciliation", "status": "gray" },
-            { "name": "Client approval", "status": "gray" }
-          ],
-          "investors": [
-            {
-              "name": "Investor A",
-              "opening": "$40.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$1.20M",
-              "fees": "-$0.28M",
-              "closing": "$40.92M",
-              "status": "Active"
+              "label": "Weekly Trades",
+              "value": "19",
+              "sub": "4 pending"
             },
             {
-              "name": "Investor B",
-              "opening": "$30.0M",
-              "subscriptions": "$0.0M",
-              "redemptions": "$0.0M",
-              "pnl": "+$0.90M",
-              "fees": "-$0.21M",
-              "closing": "$30.69M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw6",
-        "fund": { "name": "Orion Alpha", "sub": "Global Equity Fund" },
-        "workflow": "Monthly NAV",
-        "valueDate": "30 Sep 2025",
-        "progress": 55,
-        "progressColor": "amber",
-        "steps": [
-          { "label": "Pre checks", "status": "done" },
-          { "label": "Transactions", "status": "done" },
-          { "label": "Pricing", "status": "warn" }
-        ],
-        "modal": {
-          "title": "Orion Alpha – Monthly NAV",
-          "subtitle": "Global Equity Fund · Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$120M", "sub": "Equities" },
-            { "label": "Trades", "value": "20", "sub": "5 pending" },
-            {
               "label": "Workflow progress",
-              "value": "55%",
+              "value": "59%",
               "sub": "6 of 11 steps done"
             },
             {
               "label": "Pending actions",
               "value": "2",
-              "sub": "Pricing pending",
+              "sub": "Reports review needed",
               "warn": true
             }
           ],
           "workflowSteps": [
-            { "name": "Pre checks", "status": "done" },
-            { "name": "Transactions", "status": "done" },
-            { "name": "Pricing", "status": "warn" },
-            { "name": "Reconciliation", "status": "gray" }
-          ],
-          "investors": [
-            {
-              "name": "Investor X",
-              "opening": "$50M",
-              "subscriptions": "$0",
-              "redemptions": "$0",
-              "pnl": "+$2M",
-              "fees": "-$0.5M",
-              "closing": "$51.5M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw7",
-        "fund": { "name": "Delta Credit", "sub": "Private Debt" },
-        "workflow": "Daily Workflow",
-        "valueDate": "30 Sep 2025",
-        "progress": 35,
-        "progressColor": "blue",
-        "steps": [
-          { "label": "Trades", "status": "warn" },
-          { "label": "Pricing", "status": "gray" }
-        ],
-        "modal": {
-          "title": "Delta Credit – Daily Workflow",
-          "subtitle": "Private Debt · Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$60M", "sub": "Debt" },
-            { "label": "Trades", "value": "9", "sub": "Pending" },
-            {
-              "label": "Workflow progress",
-              "value": "35%",
-              "sub": "4 steps done"
-            },
-            {
-              "label": "Pending actions",
-              "value": "3",
-              "sub": "Trades & pricing",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Trades", "status": "warn" },
-            { "name": "Pricing", "status": "gray" }
-          ],
-          "investors": [
-            {
-              "name": "Investor Y",
-              "opening": "$25M",
-              "subscriptions": "$0",
-              "redemptions": "$0",
-              "pnl": "+$0.8M",
-              "fees": "-$0.2M",
-              "closing": "$25.6M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw8",
-        "fund": { "name": "Zenith Growth", "sub": "Mid Cap Equity" },
-        "workflow": "Quarterly NAV",
-        "valueDate": "30 Sep 2025",
-        "progress": 78,
-        "progressColor": "green",
-        "steps": [
-          { "label": "Transactions", "status": "done" },
-          { "label": "P&L", "status": "done" },
-          { "label": "Approval", "status": "warn" }
-        ],
-        "modal": {
-          "title": "Zenith Growth – Quarterly NAV",
-          "subtitle": "Mid Cap Equity · Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$95M", "sub": "Equity" },
-            { "label": "Progress", "value": "78%", "sub": "9 steps done" },
-            {
-              "label": "Pending",
-              "value": "1",
-              "sub": "Approval pending",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Transactions", "status": "done" },
-            { "name": "P&L", "status": "done" },
-            { "name": "Approval", "status": "warn" }
-          ],
-          "investors": [
-            {
-              "name": "Investor Z",
-              "opening": "$30M",
-              "subscriptions": "$5M",
-              "redemptions": "$0",
-              "pnl": "+$1.5M",
-              "fees": "-$0.3M",
-              "closing": "$36.2M",
-              "status": "Active"
-            }
-          ]
-        }
-      },
-      {
-        "id": "nw9",
-        "fund": { "name": "Atlas Fund", "sub": "Infrastructure" },
-        "workflow": "Monthly Workflow",
-        "valueDate": "30 Sep 2025",
-        "progress": 25,
-        "progressColor": "blue",
-        "steps": [
-          { "label": "Setup", "status": "done" },
-          { "label": "Trades", "status": "gray" }
-        ],
-        "modal": {
-          "title": "Atlas Fund – Monthly Workflow",
-          "subtitle": "Infrastructure · Value date: 30 Sep 2025",
-          "kpis": [
-            { "label": "AUM", "value": "$200M", "sub": "Infra" },
-            { "label": "Progress", "value": "25%", "sub": "Initial stage" },
-            {
-              "label": "Pending",
-              "value": "5",
-              "sub": "Multiple steps",
-              "warn": true
-            }
-          ],
-          "workflowSteps": [
-            { "name": "Setup", "status": "done" },
-            { "name": "Trades", "status": "gray" }
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Security master", "status": "done" },
+            { "name": "Pricing & FX", "status": "done" },
+            { "name": "Capital and P&L", "status": "done" },
+            { "name": "Reports review", "status": "warn" },
+            { "name": "Client approval – NAV", "status": "gray" }
           ],
           "investors": [
             {
               "name": "Investor A",
-              "opening": "$100M",
-              "subscriptions": "$0",
-              "redemptions": "$0",
-              "pnl": "+$2M",
-              "fees": "-$0.5M",
-              "closing": "$101.5M",
+              "opening": "$28.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$1.00M",
+              "fees": "-$0.24M",
+              "closing": "$28.76M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$22.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$0.80M",
+              "fees": "-$0.19M",
+              "closing": "$22.61M",
               "status": "Active"
             }
           ]
         }
       },
       {
-        "id": "nw10",
-        "fund": { "name": "Nova Tech", "sub": "Tech Growth Fund" },
-        "workflow": "Daily NAV",
-        "valueDate": "30 Sep 2025",
-        "progress": 90,
+        "id": "nw108",
+        "fund": { "name": "Axis Midcap", "sub": "Equity Fund" },
+        "workflow": "Monthly NAV",
+        "valueDate": "01 Mar 2026",
+        "progress": 82,
         "progressColor": "green",
         "steps": [
-          { "label": "Trades", "status": "done" },
-          { "label": "Pricing", "status": "done" },
           { "label": "Approval", "status": "done" }
         ],
         "modal": {
-          "title": "Nova Tech – Daily NAV",
-          "subtitle": "Tech Growth Fund · Value date: 30 Sep 2025",
+          "title": "Axis Midcap – Monthly NAV",
+          "subtitle": "Equity Fund  ·  Value date: 01 Mar 2026",
           "kpis": [
-            { "label": "AUM", "value": "$150M", "sub": "Tech" },
-            { "label": "Trades", "value": "25", "sub": "Completed" },
-            { "label": "Progress", "value": "90%", "sub": "Almost done" }
+            {
+              "label": "Subscriptions (YTD)",
+              "value": "$35.0M",
+              "sub": "Net: $34.3M"
+            },
+            {
+              "label": "Redemptions (YTD)",
+              "value": "$5.5M",
+              "sub": "Net: $5.6M"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "82%",
+              "sub": "9 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "1",
+              "sub": "Final approval pending",
+              "warn": true
+            }
           ],
           "workflowSteps": [
-            { "name": "Trades", "status": "done" },
-            { "name": "Pricing", "status": "done" },
-            { "name": "Approval", "status": "done" }
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Capital and P&L", "status": "done" },
+            { "name": "Reports review", "status": "done" },
+            { "name": "Post NAV", "status": "done" },
+            { "name": "Reconciliation", "status": "done" },
+            { "name": "Client approval – NAV", "status": "done" },
+            { "name": "Client approval – PCAP & FS", "status": "warn" }
           ],
           "investors": [
             {
+              "name": "Investor A",
+              "opening": "$18.0M",
+              "subscriptions": "+$10.0M",
+              "redemptions": "-$3.0M",
+              "pnl": "+$1.30M",
+              "fees": "-$0.31M",
+              "closing": "$25.99M",
+              "status": "Active"
+            },
+            {
               "name": "Investor B",
-              "opening": "$70M",
-              "subscriptions": "$0",
-              "redemptions": "$0",
-              "pnl": "+$3M",
-              "fees": "-$0.7M",
-              "closing": "$72.3M",
+              "opening": "$14.0M",
+              "subscriptions": "+$8.0M",
+              "redemptions": "-$2.0M",
+              "pnl": "+$1.00M",
+              "fees": "-$0.24M",
+              "closing": "$20.76M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor C",
+              "opening": "$10.0M",
+              "subscriptions": "+$8.0M",
+              "redemptions": "-$0.5M",
+              "pnl": "+$0.72M",
+              "fees": "-$0.17M",
+              "closing": "$18.05M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw109",
+        "fund": { "name": "SBI Bluechip", "sub": "Large Cap" },
+        "workflow": "NAV Review",
+        "valueDate": "05 Mar 2026",
+        "progress": 48,
+        "progressColor": "blue",
+        "steps": [
+          { "label": "Trades", "status": "warn" }
+        ],
+        "modal": {
+          "title": "SBI Bluechip – NAV Review",
+          "subtitle": "Large Cap  ·  Value date: 05 Mar 2026",
+          "kpis": [
+            {
+              "label": "AUM",
+              "value": "$112M",
+              "sub": "As of Mar 2026"
+            },
+            {
+              "label": "Daily Trades",
+              "value": "41",
+              "sub": "9 pending"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "48%",
+              "sub": "5 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "3",
+              "sub": "Trade review needed",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Security master", "status": "done" },
+            { "name": "Pricing & FX", "status": "done" },
+            { "name": "Trade capture", "status": "warn" },
+            { "name": "Payable / Receivable", "status": "gray" },
+            { "name": "Capital and P&L", "status": "gray" },
+            { "name": "Client approval – NAV", "status": "gray" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$55.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$2.80M",
+              "fees": "-$0.65M",
+              "closing": "$57.15M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$45.0M",
+              "subscriptions": "$0.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$2.30M",
+              "fees": "-$0.53M",
+              "closing": "$46.77M",
+              "status": "Active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "nw110",
+        "fund": { "name": "Kotak Infra", "sub": "Infrastructure" },
+        "workflow": "Infra NAV",
+        "valueDate": "10 Mar 2026",
+        "progress": 69,
+        "progressColor": "amber",
+        "steps": [
+          { "label": "Assets", "status": "done" }
+        ],
+        "modal": {
+          "title": "Kotak Infra – Infra NAV",
+          "subtitle": "Infrastructure  ·  Value date: 10 Mar 2026",
+          "kpis": [
+            {
+              "label": "Subscriptions (YTD)",
+              "value": "$45.0M",
+              "sub": "Net: $44.1M"
+            },
+            {
+              "label": "Redemptions (YTD)",
+              "value": "$0.0M",
+              "sub": "Net: $0.0M"
+            },
+            {
+              "label": "Workflow progress",
+              "value": "69%",
+              "sub": "7 of 11 steps done"
+            },
+            {
+              "label": "Pending actions",
+              "value": "2",
+              "sub": "Post NAV review",
+              "warn": true
+            }
+          ],
+          "workflowSteps": [
+            { "name": "Pre period end checks", "status": "done" },
+            { "name": "Transactions processing", "status": "done" },
+            { "name": "Payable / Receivable", "status": "done" },
+            { "name": "Asset valuation", "status": "done" },
+            { "name": "Capital and P&L", "status": "done" },
+            { "name": "Reports review", "status": "done" },
+            { "name": "Asset review", "status": "done" },
+            { "name": "Post NAV", "status": "warn" },
+            { "name": "Client approval – NAV", "status": "gray" }
+          ],
+          "investors": [
+            {
+              "name": "Investor A",
+              "opening": "$22.0M",
+              "subscriptions": "+$22.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$1.75M",
+              "fees": "-$0.41M",
+              "closing": "$45.34M",
+              "status": "Active"
+            },
+            {
+              "name": "Investor B",
+              "opening": "$0.0M",
+              "subscriptions": "+$23.0M",
+              "redemptions": "$0.0M",
+              "pnl": "+$1.84M",
+              "fees": "-$0.43M",
+              "closing": "$24.41M",
               "status": "Active"
             }
           ]
@@ -606,165 +776,169 @@
     ]
   },
   "otherWorkflows": {
-    "title": "Other Workflows",
+    "title": "Operational Tasks",
     "icon": "clock",
     "iconColor": "gray",
-    "count": 2,
+    "count": 5,
+    "columns": ["Fund", "Name", "Value date", "Status"],
     "rows": [
       {
-        "id": "ow1",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "30 May 2025",
+        "id": "ow101",
+        "fund": { "name": "Infosys Growth", "sub": "IT Fund" },
+        "name": "Audit Pack",
+        "valueDate": "10 Feb 2026",
         "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
+          { "label": "Audit Pending", "type": "pending" }
         ]
       },
       {
-        "id": "ow2",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "12 Mar 2025",
+        "id": "ow102",
+        "fund": { "name": "TCS Infra", "sub": "Infra Fund" },
+        "name": "Compliance Check",
+        "valueDate": "15 Feb 2026",
         "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
+          { "label": "Pending", "type": "pending" }
         ]
       },
       {
-        "id": "ow3",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "18 Jan 2025",
+        "id": "ow103",
+        "fund": { "name": "HCL Tech", "sub": "Tech Fund" },
+        "name": "Docs Review",
+        "valueDate": "20 Feb 2026",
         "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
+          { "label": "Delivered", "type": "delivered" }
         ]
       },
       {
-        "id": "ow4",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "07 Feb 2025",
+        "id": "ow104",
+        "fund": { "name": "Axis Growth", "sub": "Equity" },
+        "name": "Internal Audit",
+        "valueDate": "25 Feb 2026",
         "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
+          { "label": "Pending", "type": "pending" }
         ]
       },
       {
-        "id": "ow5",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "25 Apr 2025",
+        "id": "ow105",
+        "fund": { "name": "ICICI Infra", "sub": "Infra Fund" },
+        "name": "Report Pack",
+        "valueDate": "01 Mar 2026",
         "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
-        ]
-      },
-      {
-        "id": "ow6",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "03 Jun 2025",
-        "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
-        ]
-      },
-      {
-        "id": "ow7",
-        "fund": { "name": "Steerhead Tech", "sub": "Innovation Fund" },
-        "name": "Controller Report Pack",
-        "valueDate": "21 Jul 2025",
-        "tags": [
-          { "label": "Pre-req check", "type": "pending" },
-          { "label": "CAS Reports ✓", "type": "delivered" }
+          { "label": "Delivered", "type": "delivered" }
         ]
       }
     ]
   },
   "capitalEvents": {
-    "title": "Capital Events",
-    "count": 10,
+    "title": "Fund Movements",
+    "icon": "dollar",
+    "iconColor": "blue",
+    "count": 3,
+    "totalRows": 3,
+    "columns": ["ID", "Fund", "Type", "Value date", "Status"],
     "rows": [
       {
-        "id": "5004",
-        "fund": "EBBR Rep III",
-        "type": "Net Call",
-        "valueDate": "30 Mar 2026",
+        "id": "7001",
+        "fund": "Reliance Growth Fund",
+        "type": "Capital Call",
+        "valueDate": "05 Apr 2026",
         "status": "initiated"
       },
       {
-        "id": "4999",
-        "fund": "EBBR Rep III",
-        "type": "Call",
-        "valueDate": "30 Mar 2026",
-        "status": "initiated"
-      },
-      {
-        "id": "4994",
-        "fund": "EBBR Rep III",
-        "type": "Call",
-        "valueDate": "30 Mar 2026",
-        "status": "initiated"
-      },
-      {
-        "id": "4987",
-        "fund": "EBBR Rep III",
-        "type": "Call",
-        "valueDate": "13 Mar 2026",
-        "status": "initiated"
-      },
-      {
-        "id": "4963",
-        "fund": "EBBR Fund I",
-        "type": "Call",
-        "valueDate": "14 Feb 2026",
+        "id": "7002",
+        "fund": "Tata Equity Fund",
+        "type": "Redemption",
+        "valueDate": "06 Apr 2026",
         "status": "review"
+      },
+      {
+        "id": "7003",
+        "fund": "Adani Infra Fund",
+        "type": "Capital Call",
+        "valueDate": "07 Apr 2026",
+        "status": "initiated"
       }
     ]
   },
   "reports": {
-    "title": "Reports",
+    "title": "Analytics Reports",
+    "icon": "file",
+    "iconColor": "green",
     "count": 2,
+    "columns": ["Entity", "Report", "Group", "Created", "Status"],
     "rows": [
       {
-        "id": "r1",
-        "entity": "Steerhead Alt Energy",
-        "report": "Reconciliations",
-        "group": "Accounting",
-        "created": "30 May 2025",
+        "id": "r101",
+        "entity": "TCS Analytics",
+        "report": "Financial Summary",
+        "group": "Finance",
+        "created": "02 Mar 2026",
         "status": "delivered"
       },
       {
-        "id": "r2",
-        "entity": "AHTestFeeder",
-        "report": "Carry Calculation",
-        "group": "Accounting",
+        "id": "r102",
+        "entity": "Infosys Data",
+        "report": "Risk Analysis",
+        "group": "Finance",
         "created": "—",
         "status": "pending"
       }
     ]
   },
   "payments": {
-    "title": "Payments",
-    "count": 2,
+    "title": "Transactions",
+    "icon": "card",
+    "iconColor": "purple",
+    "count": 6,
+    "columns": ["ID", "Type", "Value date", "Amount", "Description", "Status"],
     "rows": [
       {
-        "id": "406",
-        "type": "Deal Payment",
-        "valueDate": "20 Jun 2025",
-        "amount": "50,000.00",
-        "description": "test",
-        "status": "client"
+        "id": "901",
+        "type": "Equity Payment",
+        "valueDate": "01 Apr 2026",
+        "amount": "1,20,000",
+        "description": "Equity Allocation",
+        "status": "processed"
       },
       {
-        "id": "399",
-        "type": "One Off Payment",
-        "valueDate": "19 Jun 2025",
-        "amount": "9,000.00",
-        "description": "test",
-        "status": "client"
+        "id": "902",
+        "type": "Debt Payment",
+        "valueDate": "02 Apr 2026",
+        "amount": "80,000",
+        "description": "Debt Allocation",
+        "status": "delivered"
+      },
+      {
+        "id": "903",
+        "type": "Bonus Payment",
+        "valueDate": "03 Apr 2026",
+        "amount": "50,000",
+        "description": "Bonus",
+        "status": "delivered"
+      },
+      {
+        "id": "904",
+        "type": "Refund",
+        "valueDate": "04 Apr 2026",
+        "amount": "30,000",
+        "description": "Refund",
+        "status": "processed"
+      },
+      {
+        "id": "905",
+        "type": "One Time",
+        "valueDate": "05 Apr 2026",
+        "amount": "60,000",
+        "description": "One-off",
+        "status": "delivered"
+      },
+      {
+        "id": "906",
+        "type": "Transfer",
+        "valueDate": "06 Apr 2026",
+        "amount": "90,000",
+        "description": "Internal Transfer",
+        "status": "pending"
       }
     ]
   }

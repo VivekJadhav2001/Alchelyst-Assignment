@@ -5,10 +5,12 @@ import "./App.css";
 import Modal from "./components/common/Modal";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavOverview from "./pages/NavOverview";
-import OtherWorkflows from "./pages/OtherWorkflows";
+import OtherWorkflowsPage from "./pages/OtherWorkflowsPage";
 import CaptialEventsPage from "./pages/CaptialEventsPage";
 import ReportsPage from "./pages/ReportsPage";
-import Payments from "./pages/Payments";
+import PaymentsPage from "./pages/PaymentsPage";
+import { ToastContainer } from "react-toastify";
+import Profile from "./pages/Profile";
 
 function App() {
   const [activeTab, setActiveTab] = useState("activity");
@@ -18,6 +20,7 @@ function App() {
   const [modal, setModal] = useState(null);
 
   const openModal = useCallback((data) => {
+    console.log(data,"data in open model")
     setModal(data);
     document.body.style.overflow = "hidden";
   }, []);
@@ -26,8 +29,6 @@ function App() {
     setModal(null);
     document.body.style.overflow = "";
   }, []);
-
- 
 
   return (
     <BrowserRouter>
@@ -42,19 +43,32 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Dashboard activeTab={activeTab} openModal={openModal} />}/>
+          <Route
+            path="/"
+            element={<Dashboard activeTab={activeTab} openModal={openModal} />}
+          />
           <Route path="nav-workflows" element={<NavOverview />} />
-          <Route path="other-workflows" element={<OtherWorkflows/>}/>
-          <Route path="capital-events" element={<CaptialEventsPage />}/>
-          <Route path="reports" element={<ReportsPage />}/>
-          <Route path="payments" element={<Payments />}/>
+          <Route path="other-workflows" element={<OtherWorkflowsPage />} />
+          <Route path="capital-events" element={<CaptialEventsPage />} />
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="payments" element={<PaymentsPage />} />
+          <Route path="/profile" element={<Profile/>}/>
         </Routes>
 
-        
-
-        
-
         {modal && <Modal data={modal} onClose={closeModal} />}
+
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     </BrowserRouter>
   );

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import DATA from "../../data/dummy.json";
 import Topbar from "./Topbar";
-import Filterbar from "./Filterbar";
-function Navbar({activeTab,setActiveTab,activeChip,setActiveChip,search,setSearch}) {
-  
+import StatBar from "./StatBar";
 
+function Navbar({ activeTab, setActiveTab, search, setSearch }) {
   return (
     <div>
       <Topbar
@@ -14,10 +13,12 @@ function Navbar({activeTab,setActiveTab,activeChip,setActiveChip,search,setSearc
         user={DATA.meta.user}
         date={DATA.meta.dateRange}
       />
-      <Filterbar
-        chips={DATA.filterChips}
-        activeChip={activeChip}
-        setActiveChip={setActiveChip}
+      <StatBar
+        navWorkflowsCount={DATA.navWorkflows.rows.length}
+        otherWorkflowsCount={DATA.otherWorkflows.rows.length}
+        capitalEventsCount={DATA.capitalEvents.rows.length}
+        reportsCount={DATA.reports.rows.length}
+        paymentsCount={DATA.payments.rows.length}
         search={search}
         setSearch={setSearch}
       />

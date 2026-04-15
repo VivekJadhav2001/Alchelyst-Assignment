@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from "react";
+import Reports from "../components/dashboard/Reports";
+import DATA from "../data/dummy.json";
+
 
 function ReportsPage() {
+  const data = DATA.reports;
+
+
   return (
-    <div>ReportsPage</div>
-  )
+    <div>
+      <Reports data={data} />
+    </div>
+  );
 }
 
-export default ReportsPage
+export default ReportsPage;

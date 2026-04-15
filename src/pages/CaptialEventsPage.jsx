@@ -1,8 +1,14 @@
 import React from 'react'
+import DATA from "../data/dummy.json"
+import CapitalEvents from '../components/dashboard/CapitalEvents'
 
 function CaptialEventsPage() {
+
+  const data = DATA.capitalEvents
   return (
-    <div>CaptialEventsPage</div>
+    <div>
+      <CapitalEvents data={data}/>
+    </div>
   )
 }
 

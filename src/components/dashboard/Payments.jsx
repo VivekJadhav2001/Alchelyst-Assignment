@@ -1,41 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import Panel from "../common/Panel";
 import StatusTag from "../common/StatusTag";
-import PanelFooter from "../common/PanelFooter";
 
-function CapitalEvents({ data }) {
-  const [page, setPage] = useState(1);
-
-  const perPage = 3;
-
-  const startIndex = (page - 1) * perPage;
-  const endIndex = page * perPage;
-
-  const rows = data.rows.slice(startIndex, endIndex);
-
-  const start = startIndex + 1;
-  const end = endIndex > data.rows.length ? data.rows.length : endIndex;
-
+function Payments({ data }) {
   return (
     <div>
       <Panel
         title={data.title}
         icon={data.icon}
         iconColor={data.iconColor}
-        count={data.rows.length}
-        actions={
-          <button className="text-[12px] px-2.75 py-1.25 border border-[#E2E5EB] rounded-md bg-white text-[#5A6070] hover:bg-[#F7F8FA] hover:text-[#0D1117]">
-            View all
-          </button>
-        }
+        count={data.count}
+        className="col-span-full"
       >
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
-            
             {/* HEAD */}
             <thead>
               <tr className="bg-[#F7F8FA]">
-                {["ID", "Fund", "Type", "Value date", "Status"].map((h, i) => (
+                {[
+                  "ID",
+                  "Type",
+                  "Value date",
+                  "Amount",
+                  "Description",
+                  "Status",
+                ].map((h, i) => (
                   <th
                     key={i}
                     className="px-4 py-2 text-left text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#9AA0AF] border-b border-[#E2E5EB]"
@@ -48,7 +37,7 @@ function CapitalEvents({ data }) {
 
             {/* BODY */}
             <tbody>
-              {rows.map((row) => (
+              {data.rows.map((row) => (
                 <tr
                   key={row.id}
                   className="border-b border-[#E2E5EB] hover:bg-[#F7F8FA]"
@@ -58,16 +47,9 @@ function CapitalEvents({ data }) {
                     {row.id}
                   </td>
 
-                  {/* FUND */}
-                  <td className="px-4 py-3">
-                    <span className="text-[13px] font-semibold text-[#0D1117]">
-                      {row.fund}
-                    </span>
-                  </td>
-
                   {/* TYPE */}
                   <td className="px-4 py-3">
-                    <span className="text-[13px] text-[#5A6070]">
+                    <span className="text-[13px] font-semibold text-[#0D1117]">
                       {row.type}
                     </span>
                   </td>
@@ -77,6 +59,18 @@ function CapitalEvents({ data }) {
                     <span className="text-[12px] text-[#5A6070] font-mono whitespace-nowrap">
                       {row.valueDate}
                     </span>
+                  </td>
+
+                  {/* AMOUNT */}
+                  <td className="px-4 py-3">
+                    <span className="text-[12px] font-mono font-medium text-[#5A6070]">
+                      {row.amount}
+                    </span>
+                  </td>
+
+                  {/* DESCRIPTION */}
+                  <td className="px-4 py-3 text-[12px] text-[#5A6070] max-w-55 truncate">
+                    {row.description}
                   </td>
 
                   {/* STATUS */}
@@ -89,15 +83,15 @@ function CapitalEvents({ data }) {
           </table>
         </div>
 
-        <PanelFooter
-          info={`${start}–${end} of ${data.rows.length }`}
-          totalRows={data.totalRows}
-          page={page}
-          setPage={setPage}
-        />
+        {/* FOOTER */}
+        <div className="px-4.5 py-2.5 border-t border-[#E2E5EB] bg-[#F7F8FA] flex items-center justify-between">
+          <span className="text-[11px] text-[#9AA0AF] font-mono">
+            1–{data.rows.length} of {data.rows.length}
+          </span>
+        </div>
       </Panel>
     </div>
   );
 }
 
-export default CapitalEvents;
+export default Payments;
